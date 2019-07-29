@@ -1,3 +1,5 @@
+import * as validator from "validator";
+
 export const apiRequest = async(
     url,
     method,
@@ -13,3 +15,4 @@ export const apiRequest = async(
         })
     return await response.json();
 }
+

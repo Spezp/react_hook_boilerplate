@@ -1,7 +1,9 @@
 import * as React from "react";
 import { Button, Form, FormGroup, Input } from "reactstrap";
+import useErrorHandler from './ErrorHandler'
 
 function Login() {
+    const { error, showError } = useErrorHandler(null);
     const [userEmail, setUserEmail] = React.useState("");
     const [userPassword, setUserPassword] = React.useState("");
     const [loading, setLoading] = React.useState(false);
