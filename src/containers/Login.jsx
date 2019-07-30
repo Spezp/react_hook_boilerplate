@@ -7,6 +7,9 @@ import ErrorMessage from "../components/ErrorMessage";
 /** custom hooks */
 import useErrorHandler from "../utils/custom-hooks/ErrorHandler";
 
+/** Context */
+import { authContext } from "../contexts/AuthContext";
+
 /** Utils */
 import { apiRequest, validateLoginForm } from "../utils/Helpers";
 
@@ -15,6 +18,7 @@ function Login() {
     const [userEmail, setUserEmail] = React.useState("");
     const [userPassword, setUserPassword] = React.useState("");
     const [loading, setLoading] = React.useState(false);
+    const auth = React.useContext(authContext);
 
 console.log(Button)
     const authHandler = async () => {

@@ -1,5 +1,5 @@
 import * as validator from "validator";
-
+import { DEFAULT_USER_AUTH } from "../Constants"
 export const apiRequest = async(
     url,
     method,
@@ -36,3 +36,10 @@ export const validateLoginForm = (
     return true;
 }
 
+export const getStoredUserAuth = () => {
+    const auth = window.localStorage.getItem("UserAuth");
+    if(auth) {
+        return JSON.parse(auth);
+    }
+    return DEFAULT_USER_AUTH;
+};
