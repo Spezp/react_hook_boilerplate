@@ -6,7 +6,7 @@ import Login from "./containers/Login";
 
 function RootContainer(){
     return(
-        <Wrapper>
+        <Wrapper className="test">
             <Login />
         </Wrapper>
     );
