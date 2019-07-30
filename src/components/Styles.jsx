@@ -7,6 +7,18 @@ export const Header = styled.h4`
   text-align: center;
 `;
 
+export const DefinitionContainer = styled.div`
+  width: 400px;
+`;
+
+export const WordItem = styled.div`
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: ${(props: { complete?: boolean }) =>
+    props.complete ? "line-through" : "none"};
+`;
+
 export const Input = styled.input`
   width: 100%;
   border: 1px solid #f2f2f2;

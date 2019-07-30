@@ -3,7 +3,7 @@ import * as React from "react";
 /** Custom Hooks */
 import useAuthHandler from "../utils/custom-hooks/AuthHandler";
 /** Utils */
-import { DEFAULT_USER_AUTH } from "../utils/Consts";
+import { DEFAULT_USER_AUTH } from "../Constants";
 import { getStoredUserAuth } from "../utils/Helpers";
 
 export const authContext = React.createContext({

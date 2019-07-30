@@ -3,7 +3,7 @@ import { Button, Form } from "reactstrap";
 /** Presentation */
 import ErrorMessage from "../components/ErrorMessage";
 /* Context */
-import { definitionContext } from "../context/DefinitionsContext";
+import { definitionContext } from "../contexts/DefinitionsContext";
 import { Input } from "../components/Styles";
 /** Custom Hooks */
 import useErrorHandler from "../utils/custom-hooks/ErrorHandler";
