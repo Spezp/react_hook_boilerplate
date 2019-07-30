@@ -1,13 +1,16 @@
-import React from 'react';
-import './App.css';
-import Login from './components/login';
+import * as React from "react";
 
-function App() {
-  return (
-    <div className="App">
-        <Login></Login>
-    </div>
-  );
+import { Wrapper } from "./components/Styles"
+
+import Login from "./containers/Login";
+
+function RootContainer(){
+    return(
+        <Wrapper>
+            <Login />
+        </Wrapper>
+    );
 }
 
-export default App;
+export default RootContainer;
+

@@ -1,18 +1,53 @@
 import * as React from "react";
 import { Button, Form, FormGroup, Input } from "reactstrap";
-import useErrorHandler from './ErrorHandler'
+
+/** Pres */
+import ErrorMessage from "../components/ErrorMessage";
+
+/** custom hooks */
+import useErrorHandler from "../utils/custom-hooks/ErrorHandler";
+
+/** Utils */
+import { apiRequest, validateLoginForm } from "../utils/Helpers";
 
 function Login() {
     const { error, showError } = useErrorHandler(null);
     const [userEmail, setUserEmail] = React.useState("");
     const [userPassword, setUserPassword] = React.useState("");
     const [loading, setLoading] = React.useState(false);
+
+
+    const authHandler = async () => {
+        try {
+            setLoading(true);
+            const userData = await apiRequest(
+               "/auth/login",
+                "POST",
+                { email: userEmail, password: userPassword }
+            );
+            console.log(userData);
+            const { user, token, msg } = userData;
+            if(!token) {
+                throw({ message: msg });
+            }
+            setLoading(false);
+        } catch (err) {
+            setLoading(false);
+            console.error(err)
+            showError(err.message);
+        }
+    };
+
     return (
         <Form
             onSubmit={(e) => {
                 e.preventDefault();
                 // Auth handler
-        }}>
+                if (validateLoginForm(userEmail, userPassword, showError)) {
+                    authHandler();
+                }
+            }}
+        >
             <br />
             <FormGroup>
               <Input
@@ -35,6 +70,8 @@ function Login() {
             <Button type="submit" disabled={loading} block={true}>
               {loading ? "Loading..." : "Sign In"}
             </Button>
+            <br />
+            {error && <ErrorMessage errorMessage={error} /> }
         </Form>
     )
 }

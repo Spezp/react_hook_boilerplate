@@ -3,6 +3,7 @@ import * as React from "react";
 const useErrorHandler = (initialState) => {
     const [error, setError] = React.useState(initialState);
     const showError = (errorMessage) => {
+        console.log(errorMessage)
         setError(errorMessage);
         window.setTimeout(() => {
             setError(null);
