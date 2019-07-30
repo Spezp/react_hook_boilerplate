@@ -5,7 +5,7 @@ import AddDefinition from "./AddDictionaryEntry";
 import DefinitionList from "./DefinitionList";
 /** Presentation/UI */
 import { DefinitionContainer } from "../components/Styles";
-function ToDo() {
+function Definitions() {
   return (
     <DefinitionContainer>
       <h2>My to do list</h2>
@@ -14,4 +14,4 @@ function ToDo() {
     </DefinitionContainer>
   );
 }
-export default ToDo;
+export default Definitions;
