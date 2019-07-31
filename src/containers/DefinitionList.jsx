@@ -9,7 +9,7 @@ const DefinitionList = () => {
     const { state, updateDefinitionList } = React.useContext(definitionContext);
     return (
         <React.Fragment>
-            {state.definitionList.map(({ id, word, definition, complete }, i) => {
+            {state.definitions.map(({ id, word, definition, complete }, i) => {
                 return (
                     <WordItem
                         key={id}

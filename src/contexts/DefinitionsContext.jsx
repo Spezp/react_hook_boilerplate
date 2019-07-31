@@ -1,5 +1,5 @@
 import * as React from "react";
-const initialState = { definitionList: [] };
+const initialState = { definitions: [] };
 const reducer = (state, action) => {
 switch (action.type) {
     case 'ADD':
@@ -28,15 +28,15 @@ export const definitionContext = React.createContext({
     state: {
         definitions: []
     },
-    updateDefinitions: () => {}
+    updateDefinition: () => {}
 });
 const { Provider } = definitionContext;
 const DefinitionProvider = ({
     children
 }) => {
-    const [definitions, updateDefinitions] = React.useReducer(reducer, initialState);
+    const [definitions, updateDefinition] = React.useReducer(reducer, initialState);
     return (
-        <Provider value={{ state: definitions, updateDefinitions}}>
+        <Provider value={{ state: definitions, updateDefinition}}>
               {children}
         </Provider>
     );
