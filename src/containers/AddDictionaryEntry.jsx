@@ -32,7 +32,7 @@ const AddDefinition= () => {
                 addDictionaryItem();
             }}
         >
-        <Input type="text" ref={wordInput} placeholder="Add to do item" />
+        <Input type="text" ref={wordInput} placeholder="word" />
         <Input type="text" ref={defInput} placeholder="definition" />
         <Button type="submit" block={true}>
             Add
