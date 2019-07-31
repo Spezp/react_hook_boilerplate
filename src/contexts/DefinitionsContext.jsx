@@ -1,5 +1,5 @@
 import * as React from "react";
-const initialState = { definitions: [] };
+const initialState = { definitionList: [] };
 const reducer = (state, action) => {
 switch (action.type) {
     case 'ADD':

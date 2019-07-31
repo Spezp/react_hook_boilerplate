@@ -20,7 +20,6 @@ function Login() {
     const [loading, setLoading] = React.useState(false);
     const auth = React.useContext(authContext);
 
-console.log(Button)
     const authHandler = async () => {
         try {
             setLoading(true);
@@ -34,6 +33,7 @@ console.log(Button)
             if(!token) {
                 throw({ message: msg });
             }
+            auth.setAuthStatus({ user, token })
             setLoading(false);
         } catch (err) {
             setLoading(false);

@@ -8,7 +8,7 @@ import { DefinitionContainer } from "../components/Styles";
 function Definitions() {
   return (
     <DefinitionContainer>
-      <h2>My to do list</h2>
+      <h2>Add new word to definitions</h2>
       <AddDefinition/>
       <DefinitionList/>
     </DefinitionContainer>

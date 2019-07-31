@@ -1,1 +1,1 @@
-export const DEFAULT_USER_AUTH = { token: null, email: "" };
+export const DEFAULT_USER_AUTH = { token: null, user: {} };
