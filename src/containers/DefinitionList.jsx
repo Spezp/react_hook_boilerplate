@@ -7,9 +7,10 @@ import { WordItem } from "../components/Styles";
 
 const DefinitionList = () => {
     const { state, updateDefinitionList } = React.useContext(definitionContext);
+            console.log(state)
     return (
         <React.Fragment>
-            {state.definitionList.map(({ id, word, definition, complete }, i) => {
+            {state.definitions.map(({ id, word, definition, complete }, i) => {
                 return (
                     <WordItem
                         key={id}
@@ -22,6 +23,9 @@ const DefinitionList = () => {
                         complete={complete}
                     >
                         {i + 1}. {word}
+                        <br />
+                        {definition}
+                        <br />
                     </WordItem>
                 );
             })}

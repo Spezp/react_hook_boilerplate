@@ -19,8 +19,8 @@ const AddDefinition= () => {
             updateDefinition({ type: "ADD", payload: { definition: newDef, word: newWord }})
             console.log('Added this word: ', newWord);
             console.log('And it\'s definition is: ', newDef);
-            newWord.current.value = "";
-            newDef.current.value = "";
+            wordInput.current.value = "";
+            defInput.current.value = "";
         } else {
             showError("Please fill all fields before clicking add.");
         }
